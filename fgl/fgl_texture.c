@@ -47,6 +47,10 @@ void fgl_texture_clear(fgl_texture* inTexture) {
 }
 
 void fgl_texture_delete(fgl_texture* inTexture) {
+	if(inTexture == &_fgl_texture_default)
+		return;
+	if(_fgl_texture == inTexture)
+		_fgl_texture = &_fgl_texture_default;
 	free(inTexture);
 }
 
