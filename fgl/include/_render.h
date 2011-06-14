@@ -118,20 +118,20 @@ void _func_name_raster(fgl_color_t* inPtr, fgl_color_t* inEnd
 	#ifdef _texture
 	/*if(inU0 < 0)
 		inU0 = 0;
-	if(inU0 >= (1 << (inTexture->width + 16)))
-		inU0 =  ((1 << (inTexture->width + 16)) - 1);
+	if(inU0 >= (inTexture->width << 16))
+		inU0 =  ((inTexture->width << 16) - 1);
 	if(inU1 < 0)
 		inU0 = 0;
-	if(inU1 >= (1 << (inTexture->width + 16)))
-		inU1 =  ((1 << (inTexture->width + 16)) - 1);
+	if(inU1 >= (inTexture->width << 16))
+		inU1 =  ((inTexture->width << 16) - 1);
 	if(inV0 < 0)
 		inV0 = 0;
-	if(inV0 >= (1 << (inTexture->height + 16)))
-		inV0 =  ((1 << (inTexture->height + 16)) - 1);
+	if(inV0 >= (inTexture->height << 16))
+		inV0 =  ((inTexture->height << 16) - 1);
 	if(inV1 < 0)
 		inV1 = 0;
-	if(inV1 >= (1 << (inTexture->height + 16)))
-		inV1 =  ((1 << (inTexture->height + 16)) - 1);*/
+	if(inV1 >= (inTexture->height << 16))
+		inV1 =  ((inTexture->height << 16) - 1);*/
 	#endif
 
 	// TODO - Speed up fgl_texture lookup.
