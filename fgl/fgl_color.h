@@ -14,14 +14,14 @@ extern "C"
 typedef uint16_t fgl_color_t;
 typedef uint32_t fgl_color_pair_t;
 
-static inline int fgl_color_red(fgl_color_t inColor)   { return (inColor >> 11); }
-static inline int fgl_color_green(fgl_color_t inColor) { return ((inColor & 0x07E0) >> 5); }
-static inline int fgl_color_blue(fgl_color_t inColor)  { return (inColor & 0x001F); }
+#define fgl_color_red(inColor)   (inColor >> 11)
+#define fgl_color_green(inColor) ((inColor & 0x07E0) >> 5)
+#define fgl_color_blue(inColor)  (inColor & 0x001F)
 
-static inline fgl_color_t fgl_color_rgb(int inRed, int inGreen, int inBlue) { return (((inRed) << 11) | ((inGreen) << 5) | (inBlue)); }
+#define fgl_color_rgb(inRed, inGreen, inBlue) (((inRed) << 11) | ((inGreen) << 5) | (inBlue))
 
-static const fgl_color_t FGL_COLOR_WHITE = 0xFFFF;
-static const fgl_color_t FGL_COLOR_BLACK = 0x0000;
+#define FGL_COLOR_WHITE 0xFFFF
+#define FGL_COLOR_BLACK 0x0000
 
 extern fgl_color_t _fgl_color;
 
