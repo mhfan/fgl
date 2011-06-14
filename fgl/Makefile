@@ -75,9 +75,7 @@ clean :
 
 .PHONY : install
 
-install : $(LIB_NAME).a $(LIB_NAME).so $(install_libs) $(install_headers) 
-    mkdir $(DESTDIR)$(LIB_SUFFIX)
-    -chmod 777 $(DESTDIR)$(LIB_SUFFIX)
+install : $(LIB_NAME).a $(LIB_NAME).so $(install_libs) $(install_headers)
     mkdir $(DESTDIR)$(HEADER_SUFFIX)
     -chmod 777 $(DESTDIR)$(HEADER_SUFFIX)
     @list='$(lib_LTLIBRARIES)'; for p in $$list; do \
