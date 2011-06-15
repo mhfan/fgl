@@ -3,6 +3,11 @@
 extern fgl_texture* _fgl_texture;
 
 void draw_cube() {
+
+	/*fgl_matrix_mode_set(FGL_MATRIX_MODEL);
+	fgl_matrix_identity();	
+	fgl_translate(fix16_from_int(x), fix16_from_int(y), fix16_from_int(z));*/
+
 	fgl_vertex_t tempVerts[8];
 
 	uintptr_t i;

@@ -6,22 +6,17 @@ APP_NAME = fgl_spinning_cube
 
 # Define the compiler settings here:
 
-CPP = g++
-CC  = gcc
-LD  = ld
-
 SOURCE    = .
 
 INCLUDE   =
 
 W_OPTS    = -Wall -Wextra
-CPP_OPTS  = -O3 $(INCLUDE) $(W_OPTS) -c
-CC_OPTS   = -O3 $(INCLUDE) $(W_OPTS) -c
+CPP_OPTS  = -O3 $(INCLUDE) $(W_OPTS) -c -O3 -Os -static
+CC_OPTS   = -O3 $(INCLUDE) $(W_OPTS) -c -O3 -Os -static
 
 LIB_PATH  =
-LIBS      = -lfgl -lfixmath -lglfw
-LD_OPTS   = $(LIB_PATH) $(LIBS) -o $(APP_NAME)
-
+LIBS      = -lfgl -lfixmath -lSDL -pthread
+LD_OPTS   = $(LIB_PATH) $(LIBS) -o $(APP_NAME) -static
 
 
 # Find all source files
@@ -41,7 +36,7 @@ OBJ     = $(OBJ_CPP) $(OBJ_C) $(OBJ_S)
 all : $(APP_NAME)
 
 $(APP_NAME) : $(OBJ)
-	$(LD) $(OBJ) $(LD_OPTS)
+	$(CC) $(OBJ) $(LD_OPTS)
 
 $(OBJ_CPP) : %.o : %.cpp
 	$(CPP) $(CPP_OPTS) -o $@ $<
